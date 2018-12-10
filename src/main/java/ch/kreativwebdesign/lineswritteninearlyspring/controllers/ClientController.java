@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class ClientController {
 
     @PostMapping("/clients")
     @ResponseBody
-    public Client post(@RequestBody Client client) {
+    public Client post(@Valid @RequestBody Client client) {
         return repository.save(client);
     }
 }

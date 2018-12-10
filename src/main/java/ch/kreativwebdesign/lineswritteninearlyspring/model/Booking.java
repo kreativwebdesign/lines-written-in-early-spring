@@ -4,22 +4,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private Long client;
+    @NotNull
+    @NotBlank
     private String course;
+    @NotNull
+    @PositiveOrZero
     private Double price;
-    private boolean isPayed;
+    @NotNull
+    private Boolean isPayed;
 
     public Booking() {
 
     }
 
-    public Booking(Long client, String course, Double price, boolean isPayed) {
+    public Booking(Long client, String course, Double price, Boolean isPayed) {
         this.client = client;
         this.course = course;
         this.price = price;
@@ -42,7 +51,7 @@ public class Booking {
         return price;
     }
 
-    public boolean isPayed() {
+    public Boolean isPayed() {
         return isPayed;
     }
 }

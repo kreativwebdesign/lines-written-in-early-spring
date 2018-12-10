@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class BookingController {
 
     @PostMapping("/bookings")
     @ResponseBody
-    public Booking post(@RequestBody Booking booking) {
+    public Booking post(@Valid @RequestBody Booking booking) {
         return repository.save(booking);
     }
 }
