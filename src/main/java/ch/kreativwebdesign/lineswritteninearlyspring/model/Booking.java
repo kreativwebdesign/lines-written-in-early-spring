@@ -8,18 +8,22 @@ import javax.persistence.Id;
 @Entity
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long client;
-    private Long course;
+    private String course;
+    private Double price;
+    private boolean isPayed;
 
     public Booking() {
 
     }
 
-    public Booking(Long client, Long course) {
+    public Booking(Long client, String course, Double price, boolean isPayed) {
         this.client = client;
         this.course = course;
+        this.price = price;
+        this.isPayed = isPayed;
     }
 
     public Long getId() {
@@ -30,7 +34,15 @@ public class Booking {
         return client;
     }
 
-    public Long getCourse() {
+    public String getCourse() {
         return course;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public boolean isPayed() {
+        return isPayed;
     }
 }

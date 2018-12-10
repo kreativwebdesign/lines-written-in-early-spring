@@ -8,17 +8,19 @@ import javax.persistence.Id;
 @Entity
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
+    private String emailAddress;
 
     public Client() {
     }
 
-    public Client(String firstName, String lastName) {
+    public Client(String firstName, String lastName, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.emailAddress = emailAddress;
     }
 
     public Long getId() {
@@ -31,5 +33,9 @@ public class Client {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
     }
 }
