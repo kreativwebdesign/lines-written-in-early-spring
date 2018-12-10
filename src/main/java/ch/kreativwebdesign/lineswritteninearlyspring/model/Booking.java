@@ -6,30 +6,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Client {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstName;
-    private String lastName;
+    private Long client;
+    private Long course;
 
-    public Client() {
+    public Booking() {
+
     }
 
-    public Client(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Booking(Long client, Long course) {
+        this.client = client;
+        this.course = course;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Long getClient() {
+        return client;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Long getCourse() {
+        return course;
     }
 }

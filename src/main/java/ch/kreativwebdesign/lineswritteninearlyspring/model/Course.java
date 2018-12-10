@@ -6,30 +6,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Client {
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
 
-    public Client() {
+    public Course() {
     }
 
-    public Client(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Course(String name) {
+        this.name = name;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 }
