@@ -21,18 +21,15 @@ public class Booking {
     @NotNull
     @PositiveOrZero
     private Double price;
-    @NotNull
-    private Boolean isPayed;
 
     public Booking() {
 
     }
 
-    public Booking(Long client, String course, Double price, Boolean isPayed) {
+    public Booking(Long client, String course, Double price) {
         this.client = client;
         this.course = course;
         this.price = price;
-        this.isPayed = isPayed;
     }
 
     public Long getId() {
@@ -49,9 +46,5 @@ public class Booking {
 
     public Double getPrice() {
         return price;
-    }
-
-    public Boolean isPayed() {
-        return isPayed;
     }
 }
