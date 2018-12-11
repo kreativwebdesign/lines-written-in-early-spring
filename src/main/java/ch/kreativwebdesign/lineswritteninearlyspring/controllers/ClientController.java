@@ -29,4 +29,10 @@ public class ClientController {
     public Client post(@Valid @RequestBody Client client) {
         return repository.save(client);
     }
+
+    @DeleteMapping("/clients/{clientId}")
+    @ResponseBody
+    public void post(@PathVariable Long clientId) {
+        repository.deleteById(clientId);
+    }
 }

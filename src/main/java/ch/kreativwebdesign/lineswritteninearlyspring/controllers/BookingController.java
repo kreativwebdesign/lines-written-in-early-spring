@@ -29,4 +29,10 @@ public class BookingController {
     public Booking post(@Valid @RequestBody Booking booking) {
         return repository.save(booking);
     }
+
+    @DeleteMapping("/bookings/{bookingId}")
+    @ResponseBody
+    public void post(@PathVariable Long bookingId) {
+        repository.deleteById(bookingId);
+    }
 }
