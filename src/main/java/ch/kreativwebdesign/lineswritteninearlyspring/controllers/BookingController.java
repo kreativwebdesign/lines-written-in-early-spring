@@ -35,4 +35,11 @@ public class BookingController {
     public void post(@PathVariable Long bookingId) {
         repository.deleteById(bookingId);
     }
+
+
+    @GetMapping("/bookings/{bookingId}")
+    @ResponseBody
+    public Booking get(@PathVariable Long bookingId) {
+        return repository.findById(bookingId).get();
+    }
 }
