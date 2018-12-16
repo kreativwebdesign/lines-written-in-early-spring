@@ -32,7 +32,13 @@ public class ClientController {
 
     @DeleteMapping("/clients/{clientId}")
     @ResponseBody
-    public void post(@PathVariable Long clientId) {
+    public void delete(@PathVariable Long clientId) {
         repository.deleteById(clientId);
+    }
+
+    @GetMapping("/clients/{clientId}")
+    @ResponseBody
+    public Client get(@PathVariable Long clientId) {
+        return repository.findById(clientId).get();
     }
 }
